@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import './assets/fonts/Uchen/Uchen-Regular.ttf';
+import './assets/fonts/AnythingMoment/AnythingMoment.ttf';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

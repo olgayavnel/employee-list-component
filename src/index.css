@@ -7,7 +7,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: 'UchenRegular';
+  src: local('Uchen-Regular'), url('./assets/fonts/Uchen/Uchen-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'AnythingMoment';
+  src: local('AnythingMoment'),
+    url('./assets/fonts/AnythingMoment/AnythingMoment.ttf');
 }

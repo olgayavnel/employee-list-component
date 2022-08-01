@@ -1,20 +1,19 @@
-import React, { FormEvent, SyntheticEvent } from 'react';
+import { FormEvent, SyntheticEvent } from 'react';
+import { AiTwotoneDelete } from 'react-icons/ai';
 import {
+  DeleteButton,
   Button,
   Employee,
-  EmployeeHobbies,
-  EmployeeProfession,
+  EmployeeParagraph,
   Form,
   Input,
   Label,
-  ListContainer,
+  List,
   Wrapper,
   Paragraph,
-  ContentContainer,
   EmployeeName,
-  EmployeeHeader,
-  EmployeeDescription,
-  EmployeeWrapper,
+  EmployeeBody,
+  EmployeeTag,
 } from './List.styles';
 
 type ListProps = {
@@ -23,6 +22,7 @@ type ListProps = {
     name: string;
     profession: string;
     hobbies: string;
+    tag: string;
     image: string;
   }[];
   handleChange: (event: FormEvent<HTMLInputElement>) => void;
@@ -33,6 +33,7 @@ type ListProps = {
     name: string;
     profession: string;
     hobbies: string;
+    tag: string;
     image: string;
   };
 };
@@ -46,36 +47,28 @@ export const SimpleList = ({
 }: ListProps) => {
   return (
     <Wrapper>
-      <ListContainer>
+      <List>
         {(employeeList || []).map((employee) => (
           <Employee key={employee?.id}>
-            <EmployeeWrapper>
-              <img src={employee?.image} alt='employee_image' />
-              {/* --> overlay */}
-              <ContentContainer>
-                {/* --> employee header */}
-                <EmployeeHeader>
-                  <EmployeeName>{employee?.name}</EmployeeName>
-                </EmployeeHeader>
-                {/* --> employee description */}
-                <EmployeeDescription>
-                  <EmployeeProfession>
-                    {employee?.profession}
-                  </EmployeeProfession>
-                  <EmployeeHobbies>{employee?.hobbies}</EmployeeHobbies>
-                </EmployeeDescription>
-                {/* --> button */}
-                <Button
-                  type='button'
-                  onClick={() => handleRemoveClick(employee?.id)}
-                >
-                  Remove employee
-                </Button>
-              </ContentContainer>
-            </EmployeeWrapper>
+            <img src={employee?.image} alt='employee_image' />
+            {/* --> employee header */}
+            <EmployeeBody>
+              <EmployeeTag>{employee?.tag}</EmployeeTag>
+              <EmployeeName>{employee?.name}</EmployeeName>
+              {/* --> employee description */}
+              <EmployeeParagraph>{employee?.profession}</EmployeeParagraph>
+              <EmployeeParagraph>{employee?.hobbies}</EmployeeParagraph>
+              {/* --> button */}
+            </EmployeeBody>
+            <DeleteButton
+              type='button'
+              onClick={() => handleRemoveClick(employee?.id)}
+            >
+              <AiTwotoneDelete />
+            </DeleteButton>
           </Employee>
         ))}
-      </ListContainer>
+      </List>
 
       <Form onSubmit={handleSubmit}>
         <Label htmlFor=''>
