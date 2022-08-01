@@ -13,6 +13,12 @@ export const Wrapper = styled.section`
   flex-direction: column;
   row-gap: 2rem;
   align-items: center;
+
+  @media (max-width: 768px) {
+    padding: 0;
+    margin: 2rem;
+    padding-bottom: 4rem;
+  }
 `;
 
 // List
@@ -84,10 +90,45 @@ export const DeleteButton = styled.button`
   margin: 1rem;
 `;
 
-export const Button = styled.button``;
+export const AddButton = styled.button`
+  cursor: pointer;
+  border: none;
+  color: #44828f;
+  background: #eeed94;
+  font-family: AnythingMoment;
+  font-size: 1.8rem;
+  letter-spacing: 0.1rem;
+  line-height: 1.4;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+`;
 
 // Form
-export const Form = styled.form``;
+export const Form = styled.form`
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.5rem;
+  background-color: #44828f;
+  color: #fdfdfd;
+  width: 300px;
+  padding: 2rem 4rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+`;
+
 export const Label = styled.label``;
-export const Paragraph = styled.p``;
-export const Input = styled.input``;
+export const Paragraph = styled.p`
+  letter-spacing: 0.1rem;
+  line-height: 1.4;
+`;
+export const Input = styled.input`
+  border-radius: 50px;
+  border: none;
+  padding: 0.3rem;
+  &:focus {
+    outline: none;
+  }
+`;

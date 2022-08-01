@@ -2,7 +2,7 @@ import { FormEvent, SyntheticEvent } from 'react';
 import { AiTwotoneDelete } from 'react-icons/ai';
 import {
   DeleteButton,
-  Button,
+  AddButton,
   Employee,
   EmployeeParagraph,
   Form,
@@ -51,14 +51,11 @@ export const SimpleList = ({
         {(employeeList || []).map((employee) => (
           <Employee key={employee?.id}>
             <img src={employee?.image} alt='employee_image' />
-            {/* --> employee header */}
             <EmployeeBody>
               <EmployeeTag>{employee?.tag}</EmployeeTag>
               <EmployeeName>{employee?.name}</EmployeeName>
-              {/* --> employee description */}
               <EmployeeParagraph>{employee?.profession}</EmployeeParagraph>
               <EmployeeParagraph>{employee?.hobbies}</EmployeeParagraph>
-              {/* --> button */}
             </EmployeeBody>
             <DeleteButton
               type='button'
@@ -98,7 +95,7 @@ export const SimpleList = ({
             onChange={handleChange}
           />
         </Label>
-        <Button type='submit'>Add employee</Button>
+        <AddButton type='submit'>Add employee</AddButton>
       </Form>
     </Wrapper>
   );
