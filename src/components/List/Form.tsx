@@ -1,5 +1,5 @@
 import { FormAddButton } from './FormButton';
-import { AddButton, Form, Input, Label, Paragraph } from './List.styles';
+import { Form, Input, Label, Paragraph } from './List.styles';
 import { SubmitFormProps } from './types';
 
 export const SubmitForm = ({
