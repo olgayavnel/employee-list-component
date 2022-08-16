@@ -1,5 +1,5 @@
-import { ListEmployee } from './Employee';
-import { SubmitForm } from './Form';
+import { ListEmployee } from './ListEmployee';
+import { SubmitForm } from './SubmitForm';
 import { SimpleList, Wrapper } from './List.styles';
 import { ListProps } from './types';
 
