@@ -1,8 +1,8 @@
 import React, { FormEvent, SyntheticEvent, useState } from 'react';
 import './App.css';
-import { SimpleList } from './components/List';
+import { List } from './components/List';
 
-const employees = [
+export const employees = [
   {
     id: '1',
     name: 'Anna Moose',
@@ -64,12 +64,13 @@ function App() {
   };
 
   const handleRemoveClick = (id: string) => {
+    // add rest operator
     setEmployeeList(employees.filter((employee) => employee.id !== id));
   };
 
   return (
     <div className='App'>
-      <SimpleList
+      <List
         employeeList={employeeList}
         handleChange={handleChange}
         handleSubmit={handleSubmit}

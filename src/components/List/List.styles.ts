@@ -22,7 +22,7 @@ export const Wrapper = styled.section`
 `;
 
 // List
-export const List = styled.ul`
+export const SimpleList = styled.ul`
   display: flex;
   justify-content: center;
   align-items: center;
