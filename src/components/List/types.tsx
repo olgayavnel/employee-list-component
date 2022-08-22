@@ -1,6 +1,7 @@
 import { FormEvent, SyntheticEvent } from 'react';
+import { HTMLAttributes, ReactNode } from 'react';
 
-export type ListProps = {
+export interface ListProps {
   employeeList: {
     id: string;
     name: string;
@@ -20,9 +21,9 @@ export type ListProps = {
     tag: string;
     image: string;
   };
-};
+}
 
-export type SubmitFormProps = {
+export interface SubmitFormProps {
   handleChange: (event: FormEvent<HTMLInputElement>) => void;
   handleSubmit: (event: SyntheticEvent) => void;
   employee: {
@@ -33,9 +34,9 @@ export type SubmitFormProps = {
     tag: string;
     image: string;
   };
-};
+}
 
-export type ListEmployeeProps = {
+export interface ListEmployeeProps {
   handleRemoveClick: (id: string) => void;
   employee: {
     id: string;
@@ -45,4 +46,9 @@ export type ListEmployeeProps = {
     tag: string;
     image: string;
   };
-};
+}
+
+export interface FormAddButtonProps extends HTMLAttributes<HTMLButtonElement> {
+  children: ReactNode;
+  variant: 'primary' | 'secondary' | 'tertiary';
+}

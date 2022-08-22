@@ -36,7 +36,7 @@ export const SubmitForm = ({
           onChange={handleChange}
         />
       </Label>
-      <FormAddButton />
+      <FormAddButton children={'Submit'} variant={'primary'} />
     </Form>
   );
 };
